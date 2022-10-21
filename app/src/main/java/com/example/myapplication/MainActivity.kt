@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -24,19 +25,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
-                val viewModel = viewModel<CalculatorViewModel>()
-                val state = viewModel.state
-                var buttonSpacing=8.dp
+           Scaffold() {
+               val viewModel = viewModel<CalculatorViewModel>()
+               val state = viewModel.state
+               var buttonSpacing=8.dp
 
-                Calculator(
-                    state=state,
-                    onAction = viewModel::onAction,
-                    buttonSpacing = buttonSpacing,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(MediumGray)
-                        .padding(16.dp)
-                )
+               Calculator(
+                   state=state,
+                   onAction = viewModel::onAction,
+                   buttonSpacing = buttonSpacing,
+                   modifier = Modifier
+                       .fillMaxWidth()
+                       .background(MediumGray)
+                       .padding(16.dp)
+               )
+                }
+
             }
         }
     }

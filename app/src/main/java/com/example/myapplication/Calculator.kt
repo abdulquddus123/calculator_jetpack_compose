@@ -27,8 +27,9 @@ fun Calculator(
     Box(modifier = Modifier) {
         Column(
             modifier = Modifier
-                .padding(5.dp, 0.dp, 5.dp, 0.dp)
+                .fillMaxHeight()
                 .fillMaxWidth()
+                .background(Color.LightGray)
                 .align(Alignment.BottomCenter),
             verticalArrangement = Arrangement.spacedBy(buttonSpacing)
         ) {
@@ -37,7 +38,7 @@ fun Calculator(
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 32.dp),
+                    .padding(vertical = 52.dp),
                 fontWeight = FontWeight.Light,
                 fontSize = 80.sp,
                 color = Color.White,
@@ -186,7 +187,7 @@ fun Calculator(
                     onClick = {onAction(CalculatorAction.Operation(CalculatorOperation.Add))}
                 )
             }
-            Spacer(Modifier.height(5.dp))
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
@@ -217,7 +218,7 @@ fun Calculator(
                 )
 
             }
-            Spacer(Modifier.height(5.dp))
+
         }
 
 
